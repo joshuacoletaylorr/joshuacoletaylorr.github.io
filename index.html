@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joshua Cole Taylor - Barber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    .social-link {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .social-link:hover {
+      color: #ff4d4d;
+    }
+    .main-photo {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .about {
+      margin-bottom: 2rem;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .about p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      object-fit: cover;
+      height: 200px;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox .arrows {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .arrow {
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+      user-select: none;
+      padding: 0 1rem;
+      transition: color 0.3s;
+    }
+    .arrow:hover {
+      color: #ff4d4d;
+    }
+    .book-btn {
+      display: inline-block;
+      background: #ff4d4d;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .book-btn:hover {
+      background: #e63b3b;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img
+      src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098342/biz_photo/cbbc690b87c549eab676d67279cbb8-cutcutcity-biz-photo-2f63584024cc45c58e332965e7047b-booksy.jpeg?size=640x427"
+      alt="Joshua Cole Taylor Logo"
+      class="logo"
+    />
+    <h1>Joshua Cole Taylor</h1>
+    <p>Professional Barber and Hairstylist</p>
+    <a href="https://instagram.com/joshuacoletaylorr" target="_blank" class="social-link" aria-label="Instagram">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="#fff"
+        viewBox="0 0 24 24"
+        style="vertical-align: middle;"
+      >
+        <path
+          d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.058 2.006.25 2.474.415a4.92 4.92 0 011.675 1.01 4.92 4.92 0 011.01 1.675c.165.468.357 1.268.415 2.474.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.058 1.206-.25 2.006-.415 2.474a4.92 4.92 0 01-1.01 1.675 4.92 4.92 0 01-1.675 1.01c-.468.165-1.268.357-2.474.415-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.058-2.006-.25-2.474-.415a4.92 4.92 0 01-1.675-1.01 4.92 4.92 0 01-1.01-1.675c-.165-.468-.357-1.268-.415-2.474C2.175 15.747 2.163 15.368 2.163 12s.012-3.584.07-4.85c.058-1.206.25-2.006.415-2.474a4.92 4.92 0 011.01-1.675 4.92 4.92 0 011.675-1.01c.468-.165 1.268-.357 2.474-.415C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.735 0 8.332.012 7.052.07 5.773.128 4.657.342 3.7.743 2.69 1.163 1.802 1.8 1.163 2.44c-.64.64-1.277 1.527-1.697 2.537-.401.957-.615 2.073-.673 3.352C-.012 8.332 0 8.735 0 12c0 3.265.012 3.668.07 4.948.058 1.279.272 2.395.673 3.352.42 1.01 1.057 1.897 1.697 2.537.64.64 1.527 1.277 2.537 1.697.957.401 2.073.615 3.352.673 1.28.058 1.683.07 4.948.07s3.668-.012 4.948-.07c1.279-.058 2.395-.272 3.352-.673 1.01-.42 1.897-1.057 2.537-1.697.64-.64 1.277-1.527 1.697-2.537.401-.957.615-2.073.673-3.352.058-1.28.07-1.683.07-4.948s-.012-3.668-.07-4.948c-.058-1.279-.272-2.395-.673-3.352-.42-1.01-1.057-1.897-1.697-2.537-.64-.64-1.527-1.277-2.537-1.697-.957-.401-2.073-.615-3.352-.673C15.668.012 15.265 0 12 0z"
+        />
+        <path
+          d="M12 5.838A6.162 6.162 0 005.838 12 6.162 6.162 0 0012 18.162 6.162 6.162 0 0018.162 12 6.162 6.162 0 0012 5.838zm0 10.324a4.162 4.162 0 110-8.324 4.162 4.162 0 010 8.324z"
+        />
+        <circle cx="18.406" cy="5.594" r="1.44" />
+      </svg>
+      @joshuacoletaylorr
+    </a>
+  </header>
+
+  <img
+    src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098342/inspiration/5639ee6de8c147778c7b8fae044790-cutcutcity-inspiration-a14bfcbdc466443eb175cb8e30534e-booksy.jpeg?size=1170x1170"
+    alt="Barber Work Photo"
+    class="main-photo"
+  />
+
+  <div class="container">
+    <section class="about">
+      <h2>Welcome</h2>
+      <p>
+        With years of experience delivering precision cuts, clean fades, and
+        top-tier grooming, I’m here to keep you looking your best. Book an
+        appointment today and experience the difference of a professional
+        barber who cares about every detail.
+      </p>
+    </section>
+
+    <section class="gallery">
+      <img
+        src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098342/inspiration/a847ba3629f04e4a8f90b7ee267e71-cutcutcity-inspiration-c56681004f9548dd8cd90a9634e2e1-booksy.jpeg?size=1170x1170"
+        alt="Gallery Photo 1"
+      />
+      <img
+        src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098342/inspiration/1afc635a08f54d64ae8c5c03f3710f-cutcutcity-inspiration-d333a26d03f845acb40e1ff30c2ea8-booksy.jpeg?size=1170x1170"
+        alt="Gallery Photo 2"
+      />
+    </section>
+
+    <a
+      class="book-btn"
+      href="https://joshuacoletaylor.booksy.com/a/"
+      target="_blank"
+      >Book Appointment</a
+    >
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <div class="arrows">
+      <span class="arrow" id="prev">&#10094;</span>
+      <span class="arrow" id="next">&#10095;</span>
+    </div>
+    <img src="" alt="Expanded Photo" id="lightbox-img" />
+  </div>
+
+  <footer>&copy; 2025 Joshua Cole Taylor. All Rights Reserved.</footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      lightboxImg.src = galleryImages[index].src;
+      currentIndex = index;
+      lightbox.classList.add('active');
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        showImage(index);
+      });
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showImage(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showImage(currentIndex);
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
